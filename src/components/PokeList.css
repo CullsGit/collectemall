@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pokeCard {
+  display: flex;
+  background-color: rgb(151, 166, 166);
+  border: 0.8rem solid rgb(236, 236, 40);
+  border-radius: 3%;
+  align-items: center;
+  width: 20%;
+  height: 28rem;
+  flex-direction: column;
+  margin: 1.5rem 0px;
+}
