@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./PokeList.css";
+import capitalize from "../helpers/capitalize";
 
 const PokeList = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -10,7 +11,7 @@ const PokeList = () => {
     const fetchData = async () => {
       try {
         const promises = [];
-        for (let pokeId = 1; pokeId <= 152; pokeId++) {
+        for (let pokeId = 1; pokeId <= 151; pokeId++) {
           promises.push(
             axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
           );
@@ -26,10 +27,12 @@ const PokeList = () => {
     fetchData();
   }, []);
 
-  console.log(pokeData[1]);
-
   if (error) {
     return <div>Error: {error.message}</div>;
+  }
+
+  if (!pokeData) {
+    return <h1>Loading ...</h1>;
   }
 
   return (
@@ -38,14 +41,15 @@ const PokeList = () => {
       <div className="container">
         {pokeData.map((pokemon) => (
           <div className="pokeCard">
-            <h3>{pokemon.name}</h3>
+            <h3>{capitalize(pokemon.name)}</h3>
             <h3>Hp: {pokemon.stats[0].base_stat}</h3>
             {pokemon.types[1] ? (
               <h3>
-                Type: {pokemon.types[0].type.name}/{pokemon.types[1].type.name}
+                Type: {capitalize(pokemon.types[0].type.name)}/
+                {capitalize(pokemon.types[1].type.name)}
               </h3>
             ) : (
-              <h3>Type: {pokemon.types[0].type.name}</h3>
+              <h3>Type: {capitalize(pokemon.types[0].type.name)}</h3>
             )}
 
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
