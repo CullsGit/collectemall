@@ -5,9 +5,21 @@
   flex-wrap: wrap;
 }
 
+#pokeName {
+  padding-left: 0.5rem;
+  width: 80%;
+  border: 2px solid black;
+}
+
+#pokeImage {
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 2%;
+}
+
 .pokeCard {
   display: flex;
-  background-color: rgb(159, 111, 148);
+  background-color: rgb(255, 255, 255);
   border: 0.8rem solid rgb(236, 236, 40);
   border-radius: 3%;
   align-items: center;
@@ -15,6 +27,7 @@
   height: 28rem;
   flex-direction: column;
   margin: 1.5rem 0px;
+  font-size: larger;
 }
 
 .stats {
@@ -27,4 +40,60 @@
 .stats :nth-child(2) {
   flex: 1;
   text-align: center;
+}
+
+#grass {
+  background-color: #78c850;
+}
+
+#fire {
+  background-color: #ff4229;
+}
+
+#water {
+  background-color: #6890f0;
+}
+
+#electric {
+  background-color: #ffcc00;
+}
+
+#psychic {
+  background-color: #8e00a3;
+}
+
+#fighting {
+  background-color: #87221d;
+}
+
+#ground {
+  background-color: #743c14;
+}
+
+#normal {
+  background-color: antiquewhite;
+}
+
+#poison {
+  background-color: #79507f;
+}
+
+#bug {
+  background-color: #226600;
+}
+
+#ice {
+  background-color: rgb(51, 238, 225);
+}
+
+#rock {
+  background-color: #8b8a8a;
+}
+
+#dragon {
+  background-color: #c3bc2e;
+}
+
+#ghost {
+  background-color: #373737;
 }
