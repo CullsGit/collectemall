@@ -7,7 +7,7 @@
 
 .pokeCard {
   display: flex;
-  background-color: rgb(151, 166, 166);
+  background-color: rgb(159, 111, 148);
   border: 0.8rem solid rgb(236, 236, 40);
   border-radius: 3%;
   align-items: center;
@@ -15,4 +15,16 @@
   height: 28rem;
   flex-direction: column;
   margin: 1.5rem 0px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.stats :nth-child(1),
+.stats :nth-child(2) {
+  flex: 1;
+  text-align: center;
 }

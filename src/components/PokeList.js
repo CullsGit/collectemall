@@ -31,30 +31,28 @@ const PokeList = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  if (!pokeData) {
-    return <h1>Loading ...</h1>;
-  }
-
   return (
     <div>
       <h1>PokeList</h1>
       <div className="container">
         {pokeData.map((pokemon) => (
           <div className="pokeCard">
-            <h3>{capitalize(pokemon.name)}</h3>
-            <h3>Hp: {pokemon.stats[0].base_stat}</h3>
+            <p>{capitalize(pokemon.name)}</p>
+            <p>Hp: {pokemon.stats[0].base_stat}</p>
             {pokemon.types[1] ? (
-              <h3>
+              <p>
                 Type: {capitalize(pokemon.types[0].type.name)}/
                 {capitalize(pokemon.types[1].type.name)}
-              </h3>
+              </p>
             ) : (
-              <h3>Type: {capitalize(pokemon.types[0].type.name)}</h3>
+              <p>Type: {capitalize(pokemon.types[0].type.name)}</p>
             )}
 
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-            <h3>Atk: {pokemon.stats[1].base_stat}</h3>
-            <h3>Def: {pokemon.stats[2].base_stat}</h3>
+            <div className="stats">
+              <p>Atk: {pokemon.stats[1].base_stat}</p>
+              <p>Def: {pokemon.stats[2].base_stat}</p>
+            </div>
           </div>
         ))}
       </div>
