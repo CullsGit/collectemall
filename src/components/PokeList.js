@@ -79,7 +79,11 @@ const PokeList = () => {
               <p>Atk: {pokemon.stats[1].base_stat}</p>
               <p>Def: {pokemon.stats[2].base_stat}</p>
             </div>
-            <button value={pokemon.id - 1} onClick={openModalHandler}>
+            <button
+              className="viewButton"
+              value={pokemon.id - 1}
+              onClick={openModalHandler}
+            >
               View Pokemon
             </button>
           </div>
