@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./PokeList.css";
 import capitalize from "../helpers/capitalize";
+import PokeView from "./PokeView";
 
 const PokeList = () => {
   const [pokeData, setPokeData] = useState([]);
   const [error, setError] = useState(null);
+  const [openPokeModal, setOpenPokeModal] = useState(false);
+  const [selectedPoke, setSelectedPoke] = useState(null);
+  const [isModalClosing, setIsModalClosing] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +34,22 @@ const PokeList = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+
+  const openModalHandler = (event) => {
+    setOpenPokeModal(true);
+    setSelectedPoke(pokeData[event.target.value]);
+    setIsModalClosing(false);
+  };
+
+  const closeModalHandler = () => {
+    setIsModalClosing(true);
+
+    setTimeout(() => {
+      setSelectedPoke(null);
+      setOpenPokeModal(false);
+      setIsModalClosing(false);
+    }, 200);
+  };
 
   return (
     <div>
@@ -59,9 +79,19 @@ const PokeList = () => {
               <p>Atk: {pokemon.stats[1].base_stat}</p>
               <p>Def: {pokemon.stats[2].base_stat}</p>
             </div>
+            <button value={pokemon.id - 1} onClick={openModalHandler}>
+              View Pokemon
+            </button>
           </div>
         ))}
       </div>
+      {openPokeModal && (
+        <PokeView
+          poke={selectedPoke}
+          closeModal={closeModalHandler}
+          isClosing={isModalClosing}
+        />
+      )}
     </div>
   );
 };
