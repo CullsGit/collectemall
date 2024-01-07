@@ -1,7 +1,7 @@
 import "./PokeView.css";
 import { useEffect } from "react";
 
-const PokeView = ({ poke, closeModal, isClosing }) => {
+const PokeView = ({ pokemon, closeModal, isClosing }) => {
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (!event.target.closest(".modal-content")) {
@@ -22,7 +22,7 @@ const PokeView = ({ poke, closeModal, isClosing }) => {
         <span className="close" onClick={closeModal}>
           &times;
         </span>
-        <h2>{poke.name}</h2>
+        <h2>{pokemon.name}</h2>
       </div>
     </div>
   );
