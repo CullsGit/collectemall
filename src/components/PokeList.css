@@ -10,6 +10,12 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 800px) {
+  .pokeTitle img {
+    width: 26rem;
+  }
+}
+
 .pokeTitle img {
   margin: 1.5rem;
 }
