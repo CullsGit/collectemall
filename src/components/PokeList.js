@@ -3,6 +3,7 @@ import axios from "axios";
 import "./PokeList.css";
 import capitalize from "../helpers/capitalize";
 import PokeView from "./PokeView";
+import pokeTitle from "../assets/images/poketitle.png";
 
 const PokeList = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -53,7 +54,9 @@ const PokeList = () => {
 
   return (
     <div>
-      <h1>PokeList</h1>
+      <div className="pokeTitle">
+        <img src={pokeTitle} alt="No image" />
+      </div>
       <div className="container">
         {pokeData.map((pokemon) => (
           <div className="pokeCard" id={pokemon.types[0].type.name}>

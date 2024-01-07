@@ -5,6 +5,15 @@
   flex-wrap: wrap;
 }
 
+.pokeTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.pokeTitle img {
+  margin: 1.5rem;
+}
+
 #pokeName {
   padding-left: 0.5rem;
   width: 80%;
