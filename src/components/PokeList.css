@@ -22,7 +22,6 @@
 
 #pokeImage {
   flex: 1;
-  border: 2px solid black;
   border-radius: 2%;
 }
 
@@ -37,6 +36,14 @@
   flex-direction: column;
   margin: 1.5rem 0px;
   font-size: larger;
+}
+
+@media screen and (max-width: 800px) {
+  .pokeCard {
+    font-size: medium;
+    width: 40%;
+    height: 20rem;
+  }
 }
 
 .viewButton {
