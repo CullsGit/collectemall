@@ -1,7 +1,18 @@
 import "./PokeCard.css";
 import capitalize from "../helpers/capitalize";
+import { useState } from "react";
 
 const PokeCard = ({ pokemon, openModal }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div className="pokeCard" id={pokemon.types[0].type.name}>
       <p id="pokeName">{capitalize(pokemon.name)}</p>
@@ -19,8 +30,14 @@ const PokeCard = ({ pokemon, openModal }) => {
 
       <img
         id="pokeImage"
-        src={pokemon.sprites.front_default}
+        src={
+          isHovered
+            ? pokemon.sprites.back_default
+            : pokemon.sprites.front_default
+        }
         alt={pokemon.name}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       />
       <div className="stats">
         <p>Atk: {pokemon.stats[1].base_stat}</p>
