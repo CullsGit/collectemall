@@ -84,6 +84,7 @@ const PokeList = () => {
             </div>
             <button
               className="viewButton"
+              id={pokemon.types[0].type.name}
               value={pokemon.id - 1}
               onClick={openModalHandler}
             >
