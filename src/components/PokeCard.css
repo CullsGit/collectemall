@@ -22,6 +22,10 @@
   font-size: larger;
 }
 
+.pokeCard:hover {
+  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.8);
+}
+
 @media screen and (max-width: 800px) {
   .pokeCard {
     font-size: medium;
@@ -47,6 +51,7 @@
   transform: scale(1.2);
   animation: enlarge 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 @keyframes enlarge {

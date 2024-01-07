@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const PokeCard = ({ pokemon, openModal }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const type = pokemon.types[0].type.name;
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -14,16 +15,15 @@ const PokeCard = ({ pokemon, openModal }) => {
   };
 
   return (
-    <div className="pokeCard" id={pokemon.types[0].type.name}>
+    <div className="pokeCard" id={type}>
       <p id="pokeName">{capitalize(pokemon.name)}</p>
       <div className="stats">
         {pokemon.types[1] ? (
           <p>
-            {capitalize(pokemon.types[0].type.name)}/
-            {capitalize(pokemon.types[1].type.name)}
+            {capitalize(type)}/{capitalize(pokemon.types[1].type.name)}
           </p>
         ) : (
-          <p>{capitalize(pokemon.types[0].type.name)}</p>
+          <p>{capitalize(type)}</p>
         )}
         <p>Hp: {pokemon.stats[0].base_stat}</p>
       </div>
@@ -45,7 +45,7 @@ const PokeCard = ({ pokemon, openModal }) => {
       </div>
       <button
         className="viewButton"
-        id={pokemon.types[0].type.name}
+        id={type}
         value={pokemon.id - 1}
         onClick={openModal}
       >
