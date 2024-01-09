@@ -31,6 +31,12 @@
   height: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+  .pokeContainer {
+    flex-direction: column-reverse;
+  }
+}
+
 .pokeInfo {
   border: 0.8rem solid rgb(236, 236, 40);
   border-radius: 2%;
@@ -39,6 +45,22 @@
   background-color: aliceblue;
   font-size: larger;
   width: 40%;
+}
+
+@media screen and (max-width: 1200px) {
+  .pokeInfo {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .pokeInfo p {
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pokeInfo {
+    font-size: medium;
+  }
 }
 
 .pokeName {
@@ -53,6 +75,21 @@
   background-color: aliceblue;
   border-radius: 2%;
 }
+
+@media screen and (max-width: 1200px) {
+  .pokeImage {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pokeImage {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
 .pokeImage img {
   width: 100%;
   height: 100%;
