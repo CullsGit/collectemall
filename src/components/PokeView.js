@@ -41,9 +41,6 @@ const PokeView = ({ pokemon, closeModal, isClosing }) => {
         className={`modal-content ${isClosing ? "closing" : ""}`}
         id={pokemon.types[0].type.name}
       >
-        <span className="close" onClick={closeModal}>
-          &times;
-        </span>
         {pokeData ? (
           <div className="pokeContainer">
             <div className="pokeInfo">
