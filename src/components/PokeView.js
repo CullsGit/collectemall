@@ -45,32 +45,34 @@ const PokeView = ({ pokemon, closeModal, isClosing }) => {
           &times;
         </span>
         {pokeData ? (
-          <div>
-            <h2>{capitalize(pokemon.name)}</h2>
-            <p>{pokeData.flavor_text_entries[9].flavor_text}</p>
-            {pokeData.evolves_from_species && (
-              <p>
-                Evolves from: {capitalize(pokeData.evolves_from_species.name)}
-              </p>
-            )}
-            <p>Genus: {pokeData.genera[7].genus}</p>
-            <p>Habitat: {capitalize(pokeData.habitat.name)}</p>
-            <p>Height: {heightConverter(pokemon.height)}m</p>
-            <p>Weight: {weightConverter(pokemon.weight)}kg</p>
-            <p>Moves:</p>
-            {firstFourMoves.map((item) => (
-              <p>{capitalize(item.move.name)}</p>
-            ))}
+          <div className="pokeContainer">
+            <div className="pokeInfo">
+              <h2 className="pokeName">{capitalize(pokemon.name)}</h2>
+              <p>{pokeData.flavor_text_entries[9].flavor_text}</p>
+              {pokeData.evolves_from_species && (
+                <p>
+                  Evolves from: {capitalize(pokeData.evolves_from_species.name)}
+                </p>
+              )}
+              <p>Genus: {pokeData.genera[7].genus}</p>
+              <p>Habitat: {capitalize(pokeData.habitat.name)}</p>
+              <p>Height: {heightConverter(pokemon.height)}m</p>
+              <p>Weight: {weightConverter(pokemon.weight)}kg</p>
+              <p>Moves:</p>
+              {firstFourMoves.map((item) => (
+                <li>{capitalize(item.move.name)}</li>
+              ))}
+            </div>
+            <div className="pokeImage">
+              <img
+                src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
+                alt={`${pokemon.name}`}
+              />
+            </div>
           </div>
         ) : (
           <p>Loading Data...</p>
         )}
-        <div>
-          <img
-            src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-            alt={`${pokemon.name}`}
-          />
-        </div>
       </div>
     </div>
   );
