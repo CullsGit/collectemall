@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./PokeList.css";
-import PokeView from "./PokeView";
-import PokeCard from "./PokeCard";
-import pokeTitle from "../assets/images/poketitle.png";
+import PokeView from "../PokeView/PokeView";
+import PokeCard from "../PokeCard/PokeCard";
+import pokeTitle from "../../assets/images/poketitle.png";
 
 const PokeList = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -55,7 +55,7 @@ const PokeList = () => {
   return (
     <div>
       <div className="pokeTitle">
-        <img src={pokeTitle} alt="No image" />
+        <img src={pokeTitle} alt="CollectEmAll" />
       </div>
       <div className="container">
         {pokeData.map((pokemon) => (

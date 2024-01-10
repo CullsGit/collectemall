@@ -1,5 +1,5 @@
 import "./PokeCard.css";
-import capitalize from "../helpers/capitalize";
+import capitalize from "../../helpers/capitalize";
 import { useState } from "react";
 
 const PokeCard = ({ pokemon, openModal }) => {

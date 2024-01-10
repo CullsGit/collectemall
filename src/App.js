@@ -1,5 +1,5 @@
 import "./App.css";
-import PokeList from "./components/PokeList";
+import PokeList from "./components/PokeList/PokeList";
 
 function App() {
   return (

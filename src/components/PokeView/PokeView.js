@@ -1,9 +1,9 @@
 import "./PokeView.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import capitalize from "../helpers/capitalize";
-import heightConverter from "../helpers/heightConverter";
-import weightConverter from "../helpers/weightConverter";
+import capitalize from "../../helpers/capitalize";
+import heightConverter from "../../helpers/heightConverter";
+import weightConverter from "../../helpers/weightConverter";
 
 const PokeView = ({ pokemon, closeModal, isClosing }) => {
   const [pokeData, setPokeData] = useState(null);
