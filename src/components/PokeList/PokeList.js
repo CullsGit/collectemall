@@ -54,12 +54,16 @@ const PokeList = () => {
 
   return (
     <div>
-      <div className="pokeTitle">
+      <div className="pokeTitle" data-testid="pokeTitle">
         <img src={pokeTitle} alt="CollectEmAll" />
       </div>
       <div className="container">
         {pokeData.map((pokemon) => (
-          <PokeCard pokemon={pokemon} openModal={openModalHandler} />
+          <PokeCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            openModal={openModalHandler}
+          />
         ))}
       </div>
       {openPokeModal && (
