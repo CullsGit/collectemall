@@ -61,7 +61,7 @@ test("renders PokeCard components with Pokemon names", async () => {
 
   // Check that the PokeCard components are rendered with the correct Pokemon names
   const pokeCardComponents = screen.getAllByTestId("pokeCard");
-  pokeCardComponents.forEach((pokeCard, index) => {
+  pokeCardComponents.forEach((_, index) => {
     const pokemonName = screen.getByText(`Mocked Pokemon ${index + 1}`);
     expect(pokemonName).toBeInTheDocument();
   });

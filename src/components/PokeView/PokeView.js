@@ -34,7 +34,6 @@ const PokeView = ({ pokemon, closeModal, isClosing }) => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [closeModal]);
-
   return (
     <div className="modal">
       <div
@@ -45,19 +44,27 @@ const PokeView = ({ pokemon, closeModal, isClosing }) => {
           <div className="pokeContainer">
             <div className="pokeInfo">
               <h2 className="pokeName">{capitalize(pokemon.name)}</h2>
-              <p>{pokeData.flavor_text_entries[9].flavor_text}</p>
+              {pokeData.flavor_text_entries &&
+                pokeData.flavor_text_entries[9] && (
+                  <p>{pokeData.flavor_text_entries[9].flavor_text}</p>
+                )}
               {pokeData.evolves_from_species && (
                 <p>
                   Evolves from: {capitalize(pokeData.evolves_from_species.name)}
                 </p>
               )}
-              <p>Genus: {pokeData.genera[7].genus}</p>
-              <p>Habitat: {capitalize(pokeData.habitat.name)}</p>
+
+              {pokeData.genera && pokeData.genera[7] && (
+                <p>Genus: {pokeData.genera[7].genus}</p>
+              )}
+              {pokeData.habitat && (
+                <p>Habitat: {capitalize(pokeData.habitat.name)}</p>
+              )}
               <p>Height: {heightConverter(pokemon.height)}m</p>
               <p>Weight: {weightConverter(pokemon.weight)}kg</p>
               <p>Moves:</p>
-              {firstFourMoves.map((item) => (
-                <li>{capitalize(item.move.name)}</li>
+              {firstFourMoves.map((item, index) => (
+                <li key={index}>{capitalize(item.move.name)}</li>
               ))}
             </div>
             <div className="pokeImage">
