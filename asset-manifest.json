@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/CullsGit/collectemall/static/css/main.bbf7ea19.css",
+    "main.js": "/CullsGit/collectemall/static/js/main.5830e951.js",
+    "static/js/787.d0204551.chunk.js": "/CullsGit/collectemall/static/js/787.d0204551.chunk.js",
+    "static/media/poketitle.png": "/CullsGit/collectemall/static/media/poketitle.729057cf9c66444f9c45.png",
+    "index.html": "/CullsGit/collectemall/index.html",
+    "main.bbf7ea19.css.map": "/CullsGit/collectemall/static/css/main.bbf7ea19.css.map",
+    "main.5830e951.js.map": "/CullsGit/collectemall/static/js/main.5830e951.js.map",
+    "787.d0204551.chunk.js.map": "/CullsGit/collectemall/static/js/787.d0204551.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bbf7ea19.css",
+    "static/js/main.5830e951.js"
+  ]
+}
